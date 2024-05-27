@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
 from pathlib import Path
+import dj_database_url
 import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -76,11 +77,15 @@ WSGI_APPLICATION = 'realestate.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
+# DATABASES= {
+#     'default': {
+#         'ENGINE' : 'django.db.backends.sqlite3',
+#         'NAME' : BASE_DIR/'db.sqlite3',
+#     }
+# }
+
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+    "default": dj_database_url.parse("postgres://abubakar_sid:KfdT06PA2f31L03AXGuG2THFDfK1dOkE@dpg-cpa4qacf7o1s73aa3p7g-a.oregon-postgres.render.com/test_db_dq2w")
 }
 
 
